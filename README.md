@@ -32,16 +32,5 @@ Pretty much used the same network design as in the reference model implementatio
  - Concepts that had many examples seem to be correctly identified and segmented - in the example above you can see that cars, persons were identified better. I believe this can be solved by training for longer epochs.
  - Also the resizing of images cause loss of information - you can notice this in the fact smaller objects are segmented with less accuracy.
 
-![](logs/images/sparse_entropy.png)
-
-Now for the gradients,
-  - If you closely watch the gradients you will notice the inital training is almost entirely on the new layers added - it is only after these layers are reasonably trained do we see the VGG layers get some gradient flow. This is understandable as changes the new layers affect the loss objective much more in the beginning.
-  - The earlier layers of the netowrk are initialized with VGG weights and so conceptually would require less tuning unless the train data is extremely varied - which in this case is not.
-  - The first layer of convolutional model captures low level information and since this entrirely dataset dependent you notice the gradients adjusting the first layer weights to accustom the model to the dataset.
-  - The other conv layers from VGG have very small gradients flowing as the concepts captured here are good enough for our end objective - Segmentation. 
-  - This is the core reason **Transfer Learning** works so well. Just thought of pointing this out while here.
-
-![](logs/images/conv_1_1_gradient.png)  ![](logs/images/conv_4_1_gradient.png)  ![](logs/images/conv_4_2_gradient.png)  ![](logs/images/conv_4_3_gradient.png)
-
 ## Useful Links
 - Video of the presentaion given by the authors on the paper - [link](http://techtalks.tv/talks/fully-convolutional-networks-for-semantic-segmentation/61606/) 
