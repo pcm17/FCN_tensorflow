@@ -25,7 +25,7 @@ Pretty much used the same network design as in the reference model implementatio
 
 ![](logs/sample_images/input_image_6.png)  ![](logs/sample_images/ground_truth_annotation_6.png) ![](logs/sample_images/prediction_6.png)
 
-![](logs/sample_images/input_image_7.png)  ![](logs/sample_images/ground_truth_annotation_7.png) ![](logs/sample_images/prediction_7.png)
+![](logs/sample_images/input_image_5.png)  ![](logs/sample_images/ground_truth_annotation_5.png) ![](logs/sample_images/prediction_5.png)
 
 ## Observations
  - The small batch size was necessary to fit the training model in memory but explains the slow learning
